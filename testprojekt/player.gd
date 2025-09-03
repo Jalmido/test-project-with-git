@@ -1,6 +1,8 @@
 extends CharacterBody2D
 class_name Player
 
+signal dead
+
 const MAX_SPEED = 800
 const ACC = 2500
 
@@ -18,3 +20,4 @@ func _physics_process(delta: float) -> void:
 
 func die():
 	hide()
+	emit_signal("dead")
